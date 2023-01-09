@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+    import {displayedName} from '../lib/stores'
 
-	let name = '';
-
+    let name = "";
 	$: visible = name.length > 0;
-	$: displayedName = capitalise(name);
+	$: $displayedName = capitalise(name);
 
 	function capitalise(name: string) {
 		const s = name.split('');
@@ -21,7 +21,7 @@
 
 <div class="name">
 	{#if visible}
-		<h1 transition:fade>Hello {displayedName}</h1>
+		<h1 transition:fade>Hello {$displayedName}</h1>
 	{/if}
 	<input bind:value={name} />
 </div>
