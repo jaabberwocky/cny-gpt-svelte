@@ -13,5 +13,5 @@
 
 <div class="lucky-number">
 	<button on:click={handleClick}>Get Prediction</button>
-	<LuckyNumber num={num}/>
+	<LuckyNumber {num} />
 </div>

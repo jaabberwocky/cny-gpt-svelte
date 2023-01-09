@@ -21,5 +21,4 @@
 		align-items: center;
 		flex: 0.6;
 	}
-
 </style>

@@ -29,6 +29,6 @@
 <style>
 	div.name input {
 		text-align: center;
-        font-family: 'Fira Mono', monospace
+		font-family: 'Fira Mono', monospace;
 	}
 </style>
