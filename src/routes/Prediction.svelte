@@ -1,6 +1,8 @@
 <script lang="ts">
-	import LuckyNumber from './LuckyNumber.svelte';
 	import {displayedName} from "../lib/stores";
+	import LuckyNumber from './LuckyNumber.svelte';
+	import LuckyPhrase from './LuckyPhrase.svelte';
+	import LuckyHoroscope from './LuckyHoroscope.svelte';
 
 	let num: string = '';
 	let phrase: string = '';
@@ -31,18 +33,19 @@
 	}
 </script>
 
-<div class="lucky-number">
+<div class="lucky-predictions">
 	<br>
 	<button on:click={handleClick}>Get Prediction</button>
 	<LuckyNumber {num} />
-	<p>{phrase}</p>
-	<p>{horoscope}</p>
+	<LuckyPhrase {phrase}/>
+	<LuckyHoroscope {horoscope}/>
 </div>
 
 <style>
-	.lucky-number {
+	.lucky-predictions {
 		display: flex;
 		flex-flow: column wrap;
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
 	p {
