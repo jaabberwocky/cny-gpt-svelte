@@ -20,8 +20,15 @@
 </script>
 
 <div class="name">
-	<input bind:value={name} />
 	{#if visible}
 		<h1 transition:fade>Hello {displayedName}</h1>
 	{/if}
+	<input bind:value={name} />
 </div>
+
+<style>
+	div.name input {
+		text-align: center;
+        font-family: 'Fira Mono', monospace
+	}
+</style>
