@@ -84,6 +84,10 @@ button {
 	font-family: inherit;
 }
 
+div.name input {
+	text-align: center;
+}
+
 button:focus:not(:focus-visible) {
 	outline: none;
 }

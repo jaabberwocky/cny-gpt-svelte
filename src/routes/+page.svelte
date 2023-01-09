@@ -2,6 +2,8 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import Name from './Name.svelte';
+	import LuckyNumber from './LuckyNumber.svelte';
 </script>
 
 <svelte:head>
@@ -26,6 +28,8 @@
 	</h2>
 
 	<Counter />
+	<Name />
+	<LuckyNumber />
 </section>
 
 <style>
