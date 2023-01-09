@@ -1,25 +1,13 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fade } from "svelte/transition";
 
-	let number: string = '';
-	$: visible = number.length > 0;
+    export let num: string;
 
-	async function handleClick() {
-		const resp = await fetch('http://localhost:8081/api/v1/lucky-number');
-		const data = await resp.json();
-		number = data['number'];
-	}
+    $: visible = num.length > 0;
 </script>
 
 <div class="lucky-number">
-	<button on:click={handleClick}>Get Number</button>
-	{#if visible}
-		<h1 id="number" transition:fade>{number}</h1>
-	{/if}
+    {#if visible}
+        <h1 transition:fade>{num}</h1>
+    {/if}
 </div>
-
-<style>
-	#number {
-		text-align: center;
-	}
-</style>

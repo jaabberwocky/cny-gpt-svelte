@@ -1,6 +1,6 @@
 <script>
 	import Name from './Name.svelte';
-	import LuckyNumber from './LuckyNumber.svelte';
+	import Prediction from './Prediction.svelte';
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@
 
 <section>
 	<Name />
-	<LuckyNumber />
+	<Prediction />
 </section>
 
 <style>
@@ -22,7 +22,4 @@
 		flex: 0.6;
 	}
 
-	h1 {
-		width: 100%;
-	}
 </style>
