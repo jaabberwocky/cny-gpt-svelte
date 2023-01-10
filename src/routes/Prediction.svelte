@@ -35,7 +35,11 @@
 
 <div class="lucky-predictions">
 	<br />
-	<button class="button-3" on:click={handleClick}>💰 Get Prediction 💰</button>
+	<button class="button-pushable" on:click={handleClick}>
+		<span class="button-shadow" />
+		<span class="button-edge" />
+		<span class="button-front text"> 💰 Get Prediction 💰 </span>
+	</button>
 	<LuckyNumber {num} />
 	<LuckyPhrase {phrase} />
 	<LuckyHoroscope {horoscope} />
@@ -55,55 +59,94 @@
 	}
 
 	/* CSS */
-	.button-3 {
-		appearance: none;
-		background-color: #2ea44f;
-		border: 1px solid rgba(27, 31, 35, 0.15);
-		border-radius: 6px;
-		box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
-		box-sizing: border-box;
-		color: #fff;
-		cursor: pointer;
-		display: inline-block;
-		font-family: -apple-system, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif,
-			'Apple Color Emoji', 'Segoe UI Emoji';
-		font-size: 14px;
-		font-weight: 600;
-		line-height: 20px;
-		padding: 6px 16px;
+	.button-pushable {
 		position: relative;
-		text-align: center;
-		text-decoration: none;
+		border: none;
+		background: transparent;
+		padding: 0;
+		cursor: pointer;
+		outline-offset: 4px;
+		transition: filter 250ms;
 		user-select: none;
 		-webkit-user-select: none;
 		touch-action: manipulation;
-		vertical-align: middle;
-		white-space: nowrap;
 	}
 
-	.button-3:focus:not(:focus-visible):not(.focus-visible) {
-		box-shadow: none;
+	.button-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 12px;
+		background: hsl(0deg 0% 0% / 0.25);
+		will-change: transform;
+		transform: translateY(2px);
+		transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+	}
+
+	.button-edge {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 12px;
+		background: linear-gradient(
+			to left,
+			hsl(340deg 100% 16%) 0%,
+			hsl(340deg 100% 32%) 8%,
+			hsl(340deg 100% 32%) 92%,
+			hsl(340deg 100% 16%) 100%
+		);
+	}
+
+	.button-front {
+		display: block;
+		position: relative;
+		padding: 12px 27px;
+		border-radius: 12px;
+		font-size: 1.1rem;
+		color: white;
+		background: hsl(345deg 100% 47%);
+		will-change: transform;
+		transform: translateY(-4px);
+		transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+	}
+
+	@media (min-width: 768px) {
+		.button-front {
+			font-size: 1.25rem;
+			padding: 12px 42px;
+		}
+	}
+
+	.button-pushable:hover {
+		filter: brightness(110%);
+		-webkit-filter: brightness(110%);
+	}
+
+	.button-pushable:hover .button-front {
+		transform: translateY(-6px);
+		transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+	}
+
+	.button-pushable:active .button-front {
+		transform: translateY(-2px);
+		transition: transform 34ms;
+	}
+
+	.button-pushable:hover .button-shadow {
+		transform: translateY(4px);
+		transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+	}
+
+	.button-pushable:active .button-shadow {
+		transform: translateY(1px);
+		transition: transform 34ms;
+	}
+
+	.button-pushable:focus:not(:focus-visible) {
 		outline: none;
-	}
-
-	.button-3:hover {
-		background-color: #2c974b;
-	}
-
-	.button-3:focus {
-		box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
-		outline: none;
-	}
-
-	.button-3:disabled {
-		background-color: #94d3a2;
-		border-color: rgba(27, 31, 35, 0.1);
-		color: rgba(255, 255, 255, 0.8);
-		cursor: default;
-	}
-
-	.button-3:active {
-		background-color: #298e46;
-		box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 	}
 </style>
