@@ -9,10 +9,9 @@
 		<p class="log">
 			<span>
 				Starting lucky_cat.gpt...<br />
-				Initialising...<br />
+				Initialising...
 			</span>
 		</p>
-
 		<p class="log">
 			<span>
 				const l = new luckyCatGPT();<br />
@@ -21,7 +20,7 @@
 				echo "Meoooowww"
 			</span>
 		</p>
-		<p class="command">Input Ctrl+Enter (click below or use keyboard) to begin...</p>
+		<p class="command">Ctrl+Enter to continue...</p>
 	</div>
 </div>
 
