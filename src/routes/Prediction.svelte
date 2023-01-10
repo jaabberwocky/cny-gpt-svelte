@@ -7,7 +7,8 @@
 	let num: string = '';
 	let phrase: string = '';
 	let horoscope: string = '';
-	let ctrlDown: boolean, enterDown: boolean = false;
+	let ctrlDown: boolean,
+		enterDown: boolean = false;
 	$: visible = num.length > 0 || phrase.length > 0 || horoscope.length > 0;
 	$: combination = ctrlDown && enterDown;
 	$: if (combination) {
@@ -40,11 +41,11 @@
 
 	function onKeyDown(event: any) {
 		switch (event.key) {
-			case "Control":
+			case 'Control':
 				ctrlDown = true;
 				event.preventDefault();
 				break;
-			case "Enter":
+			case 'Enter':
 				enterDown = true;
 				event.preventDefault();
 				break;
@@ -53,11 +54,11 @@
 
 	function onKeyUp(event: any) {
 		switch (event.key) {
-			case "Control":
+			case 'Control':
 				ctrlDown = false;
 				event.preventDefault();
 				break;
-			case "Enter":
+			case 'Enter':
 				enterDown = false;
 				event.preventDefault();
 				break;
@@ -65,10 +66,7 @@
 	}
 </script>
 
-<svelte:window
-	on:keydown={onKeyDown}
-	on:keyup={onKeyUp}
-/>
+<svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} />
 <div class="lucky-predictions">
 	<br />
 	<button class="btn btn-default" on:click={handleClick}> CTRL+ENTER </button>

@@ -10,7 +10,15 @@
 			<span>
 				Starting lucky_cat.gpt...<br />
 				Initialising...<br />
-				echo cat &gt;&gt; Meow!
+			</span>
+		</p>
+
+		<p class="log">
+			<span>
+				const l = new luckyCatGPT();<br />
+				l.init(); <br />
+				... <br />
+				echo "Meoooowww"
 			</span>
 		</p>
 		<p class="command">Input Ctrl+Enter (click below or use keyboard) to begin...</p>
@@ -78,6 +86,10 @@
 
 		p:nth-child(3) {
 			animation-delay: 8s;
+		}
+
+		p:nth-child(4) {
+			animation-delay: 12s;
 		}
 	}
 
