@@ -1,15 +1,11 @@
 <script lang="ts">
-	import { displayedName } from '../lib/stores';
-	import LuckyNumber from './LuckyNumber.svelte';
-	import LuckyPhrase from './LuckyPhrase.svelte';
-	import LuckyHoroscope from './LuckyHoroscope.svelte';
+	import { num, phrase, dataLoaded, horoscope } from '../lib/stores';
 
-	let num: string = '';
-	let phrase: string = '';
-	let horoscope: string = '';
 	let ctrlDown: boolean,
 		enterDown: boolean = false;
-	$: visible = num.length > 0 || phrase.length > 0 || horoscope.length > 0;
+	$: $dataLoaded = $num.length > 0 && $phrase.length > 0 && $horoscope.length > 0;
+ 
+	// handle keydown events
 	$: combination = ctrlDown && enterDown;
 	$: if (combination) {
 		handleClick();
@@ -24,19 +20,19 @@
 	async function getLuckyNumber() {
 		const resp = await fetch('http://localhost:8081/api/v1/lucky-number');
 		const data = await resp.json();
-		num = data['number'];
+		$num = data['number'];
 	}
 
 	async function getPhrase() {
-		const resp = await fetch(`http://localhost:8081/api/v1/lucky-phrase?name=${$displayedName}`);
+		const resp = await fetch(`http://localhost:8081/api/v1/lucky-phrase`);
 		const data = await resp.json();
-		phrase = data['phrase'];
+		$phrase = data['phrase'];
 	}
 
 	async function getHoroscope() {
-		const resp = await fetch(`http://localhost:8081/api/v1/lucky-horoscope?name=${$displayedName}`);
+		const resp = await fetch(`http://localhost:8081/api/v1/lucky-horoscope`);
 		const data = await resp.json();
-		horoscope = data['horoscope'];
+		$horoscope = data['horoscope'];
 	}
 
 	function onKeyDown(event: any) {
@@ -70,11 +66,6 @@
 <div class="lucky-predictions">
 	<br />
 	<button class="btn btn-default" on:click={handleClick}> CTRL+ENTER </button>
-	{#if visible}
-		<LuckyNumber {num} />
-		<LuckyPhrase {phrase} />
-		<LuckyHoroscope {horoscope} />
-	{/if}
 </div>
 
 <style>

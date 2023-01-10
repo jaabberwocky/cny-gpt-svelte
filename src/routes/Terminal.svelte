@@ -1,27 +1,42 @@
-<script lang="ss">
-	import { displayedName } from '../lib/stores';
+<script lang="ts">
+	import { fade } from 'svelte/transition';
+	import { num, phrase, dataLoaded, horoscope } from '../lib/stores';
+
 </script>
 
 <br />
 <div class="window">
-	<div class="terminal">
+	{#if !$dataLoaded}
+	<div class="terminal" transition:fade>
 		<p class="command">./lucky_cat.gpt</p>
 		<p class="log">
 			<span>
 				Starting lucky_cat.gpt...<br />
-				Initialising...
-			</span>
-		</p>
-		<p class="log">
-			<span>
-				const l = new luckyCatGPT();<br />
-				l.init(); <br />
+				Initialising...<br/>
+				const cat = new luckyCatGPT();<br />
+				cat.init(); <br />
 				... <br />
 				echo "Meoooowww"
 			</span>
 		</p>
 		<p class="command">Ctrl+Enter to continue...</p>
 	</div>
+	{:else}
+	<div class="terminal" transition:fade>
+		<p class="command">cat.generateNumber()</p>
+		<p class="log">
+			<span>
+				Ding ding ding!<br/>
+				Lucky number: {$num}
+			</span>
+			<span>
+				Horoscope:<br/>
+				{$horoscope}
+			</span>
+		</p>
+		<p class="command">Ctrl+Enter to continue...</p>
+	</div>
+	{/if}
 </div>
 
 <style lang="scss">
