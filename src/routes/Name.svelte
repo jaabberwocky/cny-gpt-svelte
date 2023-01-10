@@ -4,6 +4,7 @@
 
 	let name = '';
 	$: visible = name.length > 0;
+
 	$: $displayedName = capitalise(name);
 
 	function capitalise(name: string) {
@@ -21,7 +22,9 @@
 
 <div class="name">
 	{#if visible}
-		<h1 transition:fade={{ duration: 2500 }}><i>meoooowwww</i> Hello {$displayedName}</h1>
+		<h1 transition:fade={{ duration: 1500 }}>
+			<i>Meow</i> {$displayedName}
+		</h1>
 	{/if}
 	<input bind:value={name} />
 </div>

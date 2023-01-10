@@ -53,7 +53,7 @@
 	}
 
 	button {
-		max-width: 250px;
+		max-width: 400px;
 		/* centers the button */
 		margin: 0 auto;
 	}
