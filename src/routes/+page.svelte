@@ -1,6 +1,8 @@
 <script>
 	import Name from './Name.svelte';
 	import Prediction from './Prediction.svelte';
+
+	import luckyCat from '$lib/images/lucky-cat.jpg';
 </script>
 
 <svelte:head>
@@ -9,6 +11,8 @@
 </svelte:head>
 
 <section>
+	<img src={luckyCat} alt="lucky cat" width=150px/>
+	<br>
 	<Name />
 	<Prediction />
 </section>
