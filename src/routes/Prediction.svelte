@@ -36,9 +36,7 @@
 
 <div class="lucky-predictions">
 	<br />
-	<button on:click={handleClick}>
-		CTRL+ENTER 
-	</button>
+	<button on:click={handleClick}> CTRL+ENTER </button>
 	{#if visible}
 		<LuckyNumber {num} />
 		<LuckyPhrase {phrase} />
@@ -51,5 +49,12 @@
 		display: flex;
 		flex-flow: column wrap;
 		font-family: Arial, Helvetica, sans-serif;
+		align-items: center;
+		justify-content: center;
+	}
+
+	button {
+		text-align: center;
+		max-width: 200px;
 	}
 </style>

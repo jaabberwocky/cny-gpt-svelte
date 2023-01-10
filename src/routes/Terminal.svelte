@@ -1,16 +1,16 @@
 <script lang="ss">
-    import { displayedName } from '../lib/stores';
-
+	import { displayedName } from '../lib/stores';
 </script>
+
 <br />
 <div class="window">
 	<div class="terminal">
 		<p class="command">./lucky_cat.gpt</p>
 		<p class="log">
 			<span>
-				Starting lucky_cat.gpt...<br>
-                Initialising...<br>
-                echo cat &gt;&gt; Meow!<br>
+				Starting lucky_cat.gpt...<br />
+				Initialising...<br />
+				echo cat &gt;&gt; Meow!<br />
 			</span>
 		</p>
 		<p class="command">Hit Ctrl+Enter to begin...</p>

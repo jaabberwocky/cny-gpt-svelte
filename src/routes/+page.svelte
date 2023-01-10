@@ -14,8 +14,8 @@
 	<h1>&lt;lucky-cat gpt/&gt;</h1>
 </section>
 
-<section>
-	<img src={luckyCat} alt="lucky cat" width="300px" />
+<section class="main">
+	<img src={luckyCat} alt="lucky cat" />
 	<br />
 	<Terminal />
 	<Prediction />
@@ -31,6 +31,11 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		flex: 0.6;
+		flex: 0;
+	}
+
+	section.main img {
+		width: 100%;
+		max-width: 350px;
 	}
 </style>
