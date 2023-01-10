@@ -10,10 +10,10 @@
 			<span>
 				Starting lucky_cat.gpt...<br />
 				Initialising...<br />
-				echo cat &gt;&gt; Meow!<br />
+				echo cat &gt;&gt; Meow!
 			</span>
 		</p>
-		<p class="command">Hit Ctrl+Enter to begin...</p>
+		<p class="command">Input Ctrl+Enter (click below or use keyboard) to begin...</p>
 	</div>
 </div>
 
@@ -49,9 +49,9 @@
 	}
 
 	.terminal {
-		margin: 20px;
+		margin: 10px;
 		font-family: monospace;
-		font-size: 16px;
+		font-size: 1em;
 		color: #22da26;
 
 		.command {

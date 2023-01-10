@@ -7,7 +7,12 @@
 	let num: string = '';
 	let phrase: string = '';
 	let horoscope: string = '';
+	let ctrlDown: boolean, enterDown: boolean = false;
 	$: visible = num.length > 0 || phrase.length > 0 || horoscope.length > 0;
+	$: combination = ctrlDown && enterDown;
+	$: if (combination) {
+		handleClick();
+	}
 
 	async function handleClick() {
 		getLuckyNumber();
@@ -32,11 +37,41 @@
 		const data = await resp.json();
 		horoscope = data['horoscope'];
 	}
+
+	function onKeyDown(event: any) {
+		switch (event.key) {
+			case "Control":
+				ctrlDown = true;
+				event.preventDefault();
+				break;
+			case "Enter":
+				enterDown = true;
+				event.preventDefault();
+				break;
+		}
+	}
+
+	function onKeyUp(event: any) {
+		switch (event.key) {
+			case "Control":
+				ctrlDown = false;
+				event.preventDefault();
+				break;
+			case "Enter":
+				enterDown = false;
+				event.preventDefault();
+				break;
+		}
+	}
 </script>
 
+<svelte:window
+	on:keydown={onKeyDown}
+	on:keyup={onKeyUp}
+/>
 <div class="lucky-predictions">
 	<br />
-	<button on:click={handleClick}> CTRL+ENTER </button>
+	<button class="btn btn-default" on:click={handleClick}> CTRL+ENTER </button>
 	{#if visible}
 		<LuckyNumber {num} />
 		<LuckyPhrase {phrase} />

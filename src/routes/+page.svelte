@@ -1,12 +1,11 @@
 <script>
-	import Name from './Name.svelte';
 	import Prediction from './Prediction.svelte';
 	import Terminal from './Terminal.svelte';
 	import luckyCat from '$lib/images/lucky-cat.jpg';
 </script>
 
 <svelte:head>
-	<title>CNY GPT</title>
+	<title>&lt;lucky-cat gpt/&gt;</title>
 	<meta name="description" content="Chinese New Year GPT" />
 </svelte:head>
 
@@ -36,6 +35,6 @@
 
 	section.main img {
 		width: 100%;
-		max-width: 350px;
+		max-width: 225px;
 	}
 </style>
