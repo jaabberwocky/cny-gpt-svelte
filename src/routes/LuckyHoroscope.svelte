@@ -1,14 +1,14 @@
 <script lang="ts">
-    export let horoscope: string;
+	export let horoscope: string;
 </script>
 
 <div class="lucky-horoscope">
-    <p>{horoscope}</p>    
+	<p>{horoscope}</p>
 </div>
 
 <style>
-    p {
-        text-align: justify;
-        margin: auto 10%;
-    }
+	p {
+		text-align: justify;
+		margin: auto 10%;
+	}
 </style>

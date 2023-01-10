@@ -11,8 +11,8 @@
 </svelte:head>
 
 <section>
-	<img src={luckyCat} alt="lucky cat" width=150px/>
-	<br>
+	<img src={luckyCat} alt="lucky cat" width="150px" />
+	<br />
 	<Name />
 	<Prediction />
 </section>

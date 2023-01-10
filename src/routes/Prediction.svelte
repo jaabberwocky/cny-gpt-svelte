@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {displayedName} from "../lib/stores";
+	import { displayedName } from '../lib/stores';
 	import LuckyNumber from './LuckyNumber.svelte';
 	import LuckyPhrase from './LuckyPhrase.svelte';
 	import LuckyHoroscope from './LuckyHoroscope.svelte';
@@ -21,24 +21,24 @@
 	}
 
 	async function getPhrase() {
-		const resp = await fetch(`http://localhost:8081/api/v1/lucky-phrase?name=${$displayedName}`)
-		const data = await resp.json()
-		phrase = data['phrase']
+		const resp = await fetch(`http://localhost:8081/api/v1/lucky-phrase?name=${$displayedName}`);
+		const data = await resp.json();
+		phrase = data['phrase'];
 	}
 
 	async function getHoroscope() {
-		const resp = await fetch(`http://localhost:8081/api/v1/lucky-horoscope?name=${$displayedName}`)
-		const data = await resp.json()
-		horoscope = data['horoscope']
+		const resp = await fetch(`http://localhost:8081/api/v1/lucky-horoscope?name=${$displayedName}`);
+		const data = await resp.json();
+		horoscope = data['horoscope'];
 	}
 </script>
 
 <div class="lucky-predictions">
-	<br>
+	<br />
 	<button on:click={handleClick}>Get Prediction</button>
 	<LuckyNumber {num} />
-	<LuckyPhrase {phrase}/>
-	<LuckyHoroscope {horoscope}/>
+	<LuckyPhrase {phrase} />
+	<LuckyHoroscope {horoscope} />
 </div>
 
 <style>
@@ -51,6 +51,6 @@
 	button {
 		max-width: 150px;
 		/* centers the button */
-		margin: 0 auto; 
+		margin: 0 auto;
 	}
 </style>

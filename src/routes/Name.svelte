@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-    import {displayedName} from '../lib/stores'
+	import { displayedName } from '../lib/stores';
 
-    let name = "";
+	let name = '';
 	$: visible = name.length > 0;
 	$: $displayedName = capitalise(name);
 
@@ -21,7 +21,7 @@
 
 <div class="name">
 	{#if visible}
-		<h1 transition:fade ="{{duration:2500}}"><i>meoooowwww</i> Hello {$displayedName}</h1>
+		<h1 transition:fade={{ duration: 2500 }}><i>meoooowwww</i> Hello {$displayedName}</h1>
 	{/if}
 	<input bind:value={name} />
 </div>
