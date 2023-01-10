@@ -7,6 +7,9 @@
 </div>
 
 <style>
+    .lucky-phrase {
+        margin: auto 10%;
+    }
     p {
         text-align: center;
     }

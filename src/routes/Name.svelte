@@ -21,14 +21,18 @@
 
 <div class="name">
 	{#if visible}
-		<h1 transition:fade>Hello {$displayedName}</h1>
+		<h1 transition:fade ="{{duration:2500}}"><i>meoooowwww</i> Hello {$displayedName}</h1>
 	{/if}
 	<input bind:value={name} />
 </div>
 
 <style>
-	div.name input {
+	div.name {
 		text-align: center;
-		font-family: 'Fira Mono', monospace;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	input {
+		text-align: center;
 	}
 </style>

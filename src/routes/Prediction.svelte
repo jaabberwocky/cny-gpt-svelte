@@ -29,7 +29,7 @@
 	async function getHoroscope() {
 		const resp = await fetch(`http://localhost:8081/api/v1/lucky-horoscope?name=${$displayedName}`)
 		const data = await resp.json()
-		horoscope = data['phrase']
+		horoscope = data['horoscope']
 	}
 </script>
 
@@ -46,10 +46,6 @@
 		display: flex;
 		flex-flow: column wrap;
 		font-family: Arial, Helvetica, sans-serif;
-	}
-
-	p {
-		text-align:center;
 	}
 
 	button {
