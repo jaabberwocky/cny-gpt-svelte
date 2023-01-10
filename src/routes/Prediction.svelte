@@ -7,6 +7,7 @@
 	let num: string = '';
 	let phrase: string = '';
 	let horoscope: string = '';
+	$: visible = num.length > 0 || phrase.length > 0 || horoscope.length > 0;
 
 	async function handleClick() {
 		getLuckyNumber();
@@ -40,9 +41,11 @@
 		<span class="button-edge" />
 		<span class="button-front text"> 💰 Get Prediction 💰 </span>
 	</button>
-	<LuckyNumber {num} />
-	<LuckyPhrase {phrase} />
-	<LuckyHoroscope {horoscope} />
+	{#if visible}
+		<LuckyNumber {num} />
+		<LuckyPhrase {phrase} />
+		<LuckyHoroscope {horoscope} />
+	{/if}
 </div>
 
 <style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	// @ts-nocheck
+	const totalDelay = 3000;
 	var numberSpin = function (selector) {
 		var element = document.getElementById(selector);
 		var factor = 10 + Math.floor(Math.random() * 10);
@@ -51,78 +52,82 @@
 	};
 
 	function handleClick() {
-		numberSpin('scroll1').stop(1000 + 100 + Math.floor(Math.random() * 100), num[0]);
-		numberSpin('scroll2').stop(1000 + 200 + Math.floor(Math.random() * 100), num[1]);
-		numberSpin('scroll3').stop(1000 + 300 + Math.floor(Math.random() * 100), num[2]);
-		numberSpin('scroll4').stop(1000 + 400 + Math.floor(Math.random() * 100), num[3]);
+		numberSpin('scroll1').stop(totalDelay + 100 + Math.floor(Math.random() * 100), num[0]);
+		numberSpin('scroll2').stop(totalDelay + 200 + Math.floor(Math.random() * 100), num[1]);
+		numberSpin('scroll3').stop(totalDelay + 300 + Math.floor(Math.random() * 100), num[2]);
+		numberSpin('scroll4').stop(totalDelay + 400 + Math.floor(Math.random() * 100), num[3]);
 	}
 
 	export let num: string;
 
 	$: if (num.length > 0) {
-		handleClick()
+		handleClick();
 	}
 </script>
 
-<div class="slotcontainer">
-	<div class="slot">
-		<div id="scroll1">
-			<div>0</div>
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
-			<div>7</div>
-			<div>8</div>
-			<div>9</div>
-			<div>0</div>
+<br />
+<div class="lucky-number">
+	<h1>Lucky Number</h1>
+	<div class="slotcontainer">
+		<div class="slot">
+			<div id="scroll1">
+				<div>0</div>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>0</div>
+			</div>
 		</div>
-	</div>
-	<div class="slot">
-		<div id="scroll2">
-			<div>0</div>
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
-			<div>7</div>
-			<div>8</div>
-			<div>9</div>
-			<div>0</div>
+		<div class="slot">
+			<div id="scroll2">
+				<div>0</div>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>0</div>
+			</div>
 		</div>
-	</div>
-	<div class="slot">
-		<div id="scroll3">
-			<div>0</div>
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
-			<div>7</div>
-			<div>8</div>
-			<div>9</div>
-			<div>0</div>
+		<div class="slot">
+			<div id="scroll3">
+				<div>0</div>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>0</div>
+			</div>
 		</div>
-	</div>
-	<div class="slot">
-		<div id="scroll4">
-			<div>0</div>
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
-			<div>7</div>
-			<div>8</div>
-			<div>9</div>
-			<div>0</div>
+		<div class="slot">
+			<div id="scroll4">
+				<div>0</div>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>0</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -137,12 +142,15 @@
 	.slot {
 		display: inline-block;
 		width: 35px;
-		height: 80px;
+		height: 50px;
 		border: 0.5px solid;
 		text-align: center;
-		font-size: 50px;
+		font-size: 30px;
 		font-family: verdana;
-		line-height: 100px;
 		overflow: hidden;
+	}
+
+	.lucky-number {
+		background-color: #F77E2150;
 	}
 </style>

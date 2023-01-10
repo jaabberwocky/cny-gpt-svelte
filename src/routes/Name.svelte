@@ -23,7 +23,8 @@
 <div class="name">
 	{#if visible}
 		<h1 transition:fade={{ duration: 1500 }}>
-			<i>Meow</i> {$displayedName}
+			<i>Meow</i>
+			{$displayedName}
 		</h1>
 	{/if}
 	<input bind:value={name} />
@@ -37,5 +38,6 @@
 
 	input {
 		text-align: center;
+		font-size: 1em;
 	}
 </style>

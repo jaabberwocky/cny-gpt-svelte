@@ -1,14 +1,24 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	export let horoscope: string;
+	$: visible = horoscope.length > 0;
 </script>
 
-<div class="lucky-horoscope">
-	<p>{horoscope}</p>
-</div>
+{#if visible}
+	<div class="lucky-horoscope" transition:fade>
+		<div class="card">
+			<h3 class="card-title">Horoscope</h3>
+			{horoscope}
+		</div>
+	</div>
+{/if}
 
 <style>
-	p {
+	.lucky-horoscope {
+		margin: auto 0.25em;
+		background-color: #F77E21;
+	}
+	.card {
 		text-align: justify;
-		margin: auto 10%;
 	}
 </style>

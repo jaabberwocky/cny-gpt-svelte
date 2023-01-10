@@ -10,6 +10,10 @@
 	<meta name="description" content="Chinese New Year GPT" />
 </svelte:head>
 
+<section class="title">
+	<h1>&lt;lucky-cat gpt/&gt;</h1>
+</section>
+
 <section>
 	<img src={luckyCat} alt="lucky cat" width="300px" />
 	<br />
@@ -18,6 +22,10 @@
 </section>
 
 <style>
+	section.title h1 {
+		font-family: 'Courier New', Courier, monospace;
+		color: #D61C4E;
+	}
 	section {
 		display: flex;
 		flex-direction: column;
