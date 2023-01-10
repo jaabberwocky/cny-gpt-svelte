@@ -151,6 +151,6 @@
 	}
 
 	.lucky-number {
-		background-color: #F77E2150;
+		background-color: #f77e2150;
 	}
 </style>

@@ -16,7 +16,7 @@
 <style>
 	.lucky-horoscope {
 		margin: auto 0.25em;
-		background-color: #F77E21;
+		background-color: #f77e21;
 	}
 	.card {
 		text-align: justify;

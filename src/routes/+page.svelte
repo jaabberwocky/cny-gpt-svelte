@@ -1,7 +1,7 @@
 <script>
 	import Name from './Name.svelte';
 	import Prediction from './Prediction.svelte';
-
+	import Terminal from './Terminal.svelte';
 	import luckyCat from '$lib/images/lucky-cat.jpg';
 </script>
 
@@ -17,14 +17,14 @@
 <section>
 	<img src={luckyCat} alt="lucky cat" width="300px" />
 	<br />
-	<Name />
+	<Terminal />
 	<Prediction />
 </section>
 
 <style>
 	section.title h1 {
 		font-family: 'Courier New', Courier, monospace;
-		color: #D61C4E;
+		color: #d61c4e;
 	}
 	section {
 		display: flex;
