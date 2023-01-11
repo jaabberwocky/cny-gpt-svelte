@@ -11,7 +11,6 @@
 		<p class="command">./lucky_cat.gpt</p>
 		<p class="log">
 			<span>
-				Starting lucky_cat.gpt...<br />
 				Initialising...<br/>
 				const cat = new luckyCatGPT();<br />
 				cat.init(); <br />
