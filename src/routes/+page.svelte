@@ -7,6 +7,14 @@
 	import Restart from './Restart.svelte';
 
 	let buttonPressed: boolean = false;
+	let name: string = '';
+	let visible: boolean = false;
+
+	function handleMessage(event: any) {
+		console.log(event.detail.text);
+	}
+
+	setTimeout(() => (visible = true), 12000);
 </script>
 
 <svelte:head>
@@ -21,11 +29,13 @@
 <section class="main">
 	<img src={luckyCat} alt="lucky cat" />
 	<br />
-	<Terminal {buttonPressed} />
-	{#if !($dataLoaded && buttonPressed)}
-		<Prediction bind:buttonPressed />
-	{:else}
-		<Restart bind:buttonPressed />
+	<Terminal bind:name bind:buttonPressed on:message={handleMessage} />
+	{#if visible}
+		{#if !($dataLoaded && buttonPressed)}
+			<Prediction bind:buttonPressed bind:name />
+		{:else}
+			<Restart />
+		{/if}
 	{/if}
 </section>
 
