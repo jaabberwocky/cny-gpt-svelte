@@ -74,9 +74,9 @@
 				Date: dateObj.toLocaleDateString('en-SG', {
 					timeZone: 'Asia/Singapore',
 					hour12: false,
-					weekday: 'long',
+					weekday: 'short',
 					year: 'numeric',
-					month: 'long',
+					month: 'short',
 					day: 'numeric'
 				}),
 				PrizeCode: prizeMapping[prize['PrizeCode']]
