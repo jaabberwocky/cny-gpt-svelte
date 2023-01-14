@@ -7,8 +7,10 @@
 	<div>
 		{#if isLuckyNumber}
 			Your lucky number this year is:
+			<slot />
+		{:else}
+			<slot />
 		{/if}
-		<slot />
 	</div>
 </div>
 

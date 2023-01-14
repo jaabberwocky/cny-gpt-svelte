@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { num, phrase, dataLoaded, horoscope } from '../lib/stores';
+	import { num, phrase, dataLoaded, horoscope, previousResults } from '../lib/stores';
 	import { fade } from 'svelte/transition';
 	import Name from './Name.svelte';
 
@@ -17,13 +17,13 @@
 
 	async function handleClick() {
 		buttonPressed = true;
-		getLuckyNumber();
+		getLuckyNumber().then(() => {
+			getPreviousResults($num);
+		});
 		getPhrase();
 		getHoroscope();
 		Promise.all([getLuckyNumber(), getPhrase(), getHoroscope()]).then(() => {
-			console.log($num, $phrase, $horoscope);
 			$dataLoaded = true;
-			console.log($dataLoaded);
 		});
 	}
 
@@ -31,6 +31,14 @@
 		const resp = await fetch('/api/lucky-number');
 		const data = await resp.json();
 		$num = data['number'];
+	}
+
+	async function getPreviousResults(numToCheck: string) {
+		const resp = await fetch('/api/previous-result?number=' + numToCheck);
+		const data = await resp.json();
+		$previousResults = JSON.parse(data['d']);
+
+		console.log($previousResults);
 	}
 
 	async function getPhrase() {
@@ -76,7 +84,11 @@
 <div class="lucky-predictions" in:fade={{ duration: 100 }}>
 	<br />
 	<Name bind:name />
-	<button class="btn btn-default" on:click={handleClick}> CTRL+ENTER </button>
+	{#if name.length > 0}
+		<button class="btn btn-default" on:click={handleClick} in:fade={{ duration: 100 }}>
+			CTRL+ENTER
+		</button>
+	{/if}
 </div>
 
 <style>
