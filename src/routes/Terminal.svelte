@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import { dataLoaded } from '../lib/stores';
 	import PredictionResults from './PredictionResults.svelte';
 	export let buttonPressed: boolean;
+	export let name: string;
 </script>
 
 <br />
@@ -12,16 +14,20 @@
 			<p class="log">
 				<span>
 					Initialising...<br />
-					const cat = new luckyCatGPT();<br />
-					cat.init(); <br />
+					const manekiNeko = new luckyCatGPT();<br />
+					manekiNeko.init(); <br />
 					... <br />
 					echo "Meoooowww"
 				</span>
 			</p>
-
-			<p class="command">Ctrl+Enter to continue...</p>
+			<p class="command">manekiNeko: tell me your name...</p>
+			{#if name !== ''}
+				<p in:fade={{ duration: 500 }} out:fade={{ duration: 100 }}>
+					manekiNeko: Hello {name}! Hit CTRL+Enter to continue...
+				</p>
+			{/if}
 			{#if buttonPressed}
-				<p>Loading...</p>
+				<p in:fade out:fade={{ duration: 100 }}>Loading...</p>
 			{/if}
 		</div>
 	</div>

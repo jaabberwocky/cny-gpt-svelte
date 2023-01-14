@@ -1,10 +1,6 @@
 <script lang="ts">
-	import { dataLoaded } from '$lib/stores';
-	export let buttonPressed: boolean;
-
 	function handleClick() {
-		$dataLoaded = false;
-		buttonPressed = false;
+		location.reload();
 	}
 </script>
 

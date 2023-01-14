@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { num, phrase, dataLoaded, horoscope } from '../lib/stores';
+	import { fade } from 'svelte/transition';
+	import Name from './Name.svelte';
 
 	let ctrlDown: boolean,
 		enterDown: boolean = false;
 
 	export let buttonPressed: boolean = false;
+	export let name: string;
 
 	// handle keydown events
 	$: combination = ctrlDown && enterDown;
@@ -31,13 +34,13 @@
 	}
 
 	async function getPhrase() {
-		const resp = await fetch(`/api/lucky-phrase`);
+		const resp = await fetch(`/api/lucky-phrase?name=${name}`);
 		const data = await resp.json();
 		$phrase = data['phrase'];
 	}
 
 	async function getHoroscope() {
-		const resp = await fetch(`/api/lucky-horoscope?name=Tobias`);
+		const resp = await fetch(`/api/lucky-horoscope?name=${name}`);
 		const data = await resp.json();
 		$horoscope = data['horoscope'];
 	}
@@ -70,8 +73,9 @@
 </script>
 
 <svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} />
-<div class="lucky-predictions">
+<div class="lucky-predictions" in:fade={{ duration: 100 }}>
 	<br />
+	<Name bind:name />
 	<button class="btn btn-default" on:click={handleClick}> CTRL+ENTER </button>
 </div>
 
