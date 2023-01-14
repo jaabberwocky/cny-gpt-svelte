@@ -14,7 +14,7 @@
 		console.log(event.detail.text);
 	}
 
-	setTimeout(() => (visible = true), 12000);
+	setTimeout(() => (visible = true), 10000);
 </script>
 
 <svelte:head>

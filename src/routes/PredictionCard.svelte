@@ -1,5 +1,9 @@
 <script lang="ts">
+	import { previousResults } from '$lib/stores';
 	export let isLuckyNumber: boolean = false;
+
+	//@ts-ignore
+	const numAppearances = previousResults[0]['NumberofAppearances'];
 </script>
 
 <div class="terminal-card">
