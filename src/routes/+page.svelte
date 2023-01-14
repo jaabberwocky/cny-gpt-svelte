@@ -14,7 +14,7 @@
 		console.log(event.detail.text);
 	}
 
-	setTimeout(() => (visible = true), 10000);
+	setTimeout(() => (visible = true), 5000);
 </script>
 
 <svelte:head>
@@ -28,6 +28,8 @@
 
 <section class="main">
 	<img src={luckyCat} alt="lucky cat" />
+	<br />
+	<br />
 	<br />
 	<Terminal bind:name bind:buttonPressed on:message={handleMessage} />
 	{#if visible}

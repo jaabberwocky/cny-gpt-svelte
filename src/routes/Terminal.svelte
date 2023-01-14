@@ -76,7 +76,7 @@
 			width: 0%;
 			white-space: nowrap;
 			overflow: hidden;
-			animation: write-command 5s both;
+			animation: write-command 2s both;
 
 			&:before {
 				content: '$ ';
@@ -87,7 +87,7 @@
 		.log {
 			white-space: nowrap;
 			overflow: hidden;
-			animation: write-log 5s both;
+			animation: write-log 2s both;
 		}
 
 		p:nth-child(2) {
@@ -95,11 +95,11 @@
 		}
 
 		p:nth-child(3) {
-			animation-delay: 8s;
+			animation-delay: 4s;
 		}
 
 		p:nth-child(4) {
-			animation-delay: 12s;
+			animation-delay: 6s;
 		}
 	}
 

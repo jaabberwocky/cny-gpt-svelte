@@ -1,5 +1,12 @@
 <script lang="ts">
-	import { num, phrase, dataLoaded, horoscope, previousResults } from '../lib/stores';
+	import {
+		num,
+		phrase,
+		dataLoaded,
+		horoscope,
+		previousResults,
+		numAppearances
+	} from '../lib/stores';
 	import { fade } from 'svelte/transition';
 	import Name from './Name.svelte';
 
@@ -36,9 +43,52 @@
 	async function getPreviousResults(numToCheck: string) {
 		const resp = await fetch('/api/previous-result?number=' + numToCheck);
 		const data = await resp.json();
-		$previousResults = JSON.parse(data['d']);
+		const results = JSON.parse(data['d']);
+		console.log(results);
+
+		$numAppearances = results[0]['NumberOfAppearances'];
+		$previousResults = getPreviousWinningDates(results[0]['Prizes']);
 
 		console.log($previousResults);
+	}
+
+	function getPreviousWinningDates(
+		prizesArr: Array<{ DrawDate: string; PrizeCode: string }>
+	): Array<{ PrizeCode: string; Date: string }> {
+		const arr: Array<{ PrizeCode: string; Date: string }> = [];
+
+		prizesArr.forEach((prize: { DrawDate: string; PrizeCode: string }) => {
+			const d = prize['DrawDate'];
+			const secondsSinceEpoch = extractOnlyNumbersFromString(d);
+			const dateObj = new Date(parseInt(secondsSinceEpoch));
+
+			const prizeMapping: { [index: string]: string } = {
+				S: 'Starter',
+				C: 'Consolation',
+				'3': 'Third',
+				'2': 'Second',
+				'1': 'First'
+			};
+
+			const obj = {
+				Date: dateObj.toLocaleDateString('en-SG', {
+					timeZone: 'Asia/Singapore',
+					hour12: false,
+					weekday: 'long',
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric'
+				}),
+				PrizeCode: prizeMapping[prize['PrizeCode']]
+			};
+
+			arr.push(obj);
+		});
+		return arr;
+	}
+
+	function extractOnlyNumbersFromString(s: string): string {
+		return s.replace(/\D/g, '');
 	}
 
 	async function getPhrase() {
