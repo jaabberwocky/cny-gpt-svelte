@@ -3,9 +3,9 @@
 
 	let ctrlDown: boolean,
 		enterDown: boolean = false;
-	// $: if ($num.length > 0 && $phrase.length > 0 && $horoscope.length > 0) {
-	// 	$dataLoaded = true;
-	// }
+
+	export let buttonPressed: boolean = false;
+
 	// handle keydown events
 	$: combination = ctrlDown && enterDown;
 	$: if (combination) {
@@ -13,6 +13,7 @@
 	}
 
 	async function handleClick() {
+		buttonPressed = true;
 		getLuckyNumber();
 		getPhrase();
 		getHoroscope();

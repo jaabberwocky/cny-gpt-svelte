@@ -1,7 +1,12 @@
-<script>
+<script lang="ts">
 	import Prediction from './Prediction.svelte';
 	import Terminal from './Terminal.svelte';
 	import luckyCat from '$lib/images/lucky-cat.jpg';
+
+	import { dataLoaded } from '$lib/stores';
+	import Restart from './Restart.svelte';
+
+	let buttonPressed: boolean = false;
 </script>
 
 <svelte:head>
@@ -16,8 +21,12 @@
 <section class="main">
 	<img src={luckyCat} alt="lucky cat" />
 	<br />
-	<Terminal />
-	<Prediction />
+	<Terminal {buttonPressed} />
+	{#if !($dataLoaded && buttonPressed)}
+		<Prediction bind:buttonPressed />
+	{:else}
+		<Restart bind:buttonPressed />
+	{/if}
 </section>
 
 <style>

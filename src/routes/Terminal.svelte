@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { num, phrase, dataLoaded, horoscope } from '../lib/stores';
+	import { dataLoaded } from '../lib/stores';
+	import PredictionResults from './PredictionResults.svelte';
+	export let buttonPressed: boolean;
 </script>
 
 <br />
@@ -16,18 +18,15 @@
 					echo "Meoooowww"
 				</span>
 			</p>
+
 			<p class="command">Ctrl+Enter to continue...</p>
+			{#if buttonPressed}
+				<p>Loading...</p>
+			{/if}
 		</div>
 	</div>
 {:else}
-	<div class="prediction-results">
-		<h1>Prediction Returned!</h1>
-		<ul>
-			<li>{$phrase}</li>
-			<li>Number: {$num}</li>
-			<li>Horoscope: {$horoscope}</li>
-		</ul>
-	</div>
+	<PredictionResults />
 {/if}
 
 <style lang="scss">
