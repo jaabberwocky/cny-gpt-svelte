@@ -3,8 +3,9 @@
 
 	let ctrlDown: boolean,
 		enterDown: boolean = false;
-	$: $dataLoaded = $num.length > 0 && $phrase.length > 0 && $horoscope.length > 0;
- 
+	// $: if ($num.length > 0 && $phrase.length > 0 && $horoscope.length > 0) {
+	// 	$dataLoaded = true;
+	// }
 	// handle keydown events
 	$: combination = ctrlDown && enterDown;
 	$: if (combination) {
@@ -15,22 +16,27 @@
 		getLuckyNumber();
 		getPhrase();
 		getHoroscope();
+		Promise.all([getLuckyNumber(), getPhrase(), getHoroscope()]).then(() => {
+			console.log($num, $phrase, $horoscope);
+			$dataLoaded = true;
+			console.log($dataLoaded);
+		});
 	}
 
 	async function getLuckyNumber() {
-		const resp = await fetch('http://localhost:8081/api/v1/lucky-number');
+		const resp = await fetch('/api/lucky-number');
 		const data = await resp.json();
 		$num = data['number'];
 	}
 
 	async function getPhrase() {
-		const resp = await fetch(`http://localhost:8081/api/v1/lucky-phrase`);
+		const resp = await fetch(`/api/lucky-phrase`);
 		const data = await resp.json();
 		$phrase = data['phrase'];
 	}
 
 	async function getHoroscope() {
-		const resp = await fetch(`http://localhost:8081/api/v1/lucky-horoscope`);
+		const resp = await fetch(`/api/lucky-horoscope?name=Tobias`);
 		const data = await resp.json();
 		$horoscope = data['horoscope'];
 	}

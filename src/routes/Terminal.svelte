@@ -1,42 +1,34 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import { num, phrase, dataLoaded, horoscope } from '../lib/stores';
-
 </script>
 
 <br />
-<div class="window">
-	{#if !$dataLoaded}
-	<div class="terminal" transition:fade>
-		<p class="command">./lucky_cat.gpt</p>
-		<p class="log">
-			<span>
-				Initialising...<br/>
-				const cat = new luckyCatGPT();<br />
-				cat.init(); <br />
-				... <br />
-				echo "Meoooowww"
-			</span>
-		</p>
-		<p class="command">Ctrl+Enter to continue...</p>
+{#if !$dataLoaded}
+	<div class="window">
+		<div class="terminal">
+			<p class="command">./lucky_cat.gpt</p>
+			<p class="log">
+				<span>
+					Initialising...<br />
+					const cat = new luckyCatGPT();<br />
+					cat.init(); <br />
+					... <br />
+					echo "Meoooowww"
+				</span>
+			</p>
+			<p class="command">Ctrl+Enter to continue...</p>
+		</div>
 	</div>
-	{:else}
-	<div class="terminal" transition:fade>
-		<p class="command">cat.generateNumber()</p>
-		<p class="log">
-			<span>
-				Ding ding ding!<br/>
-				Lucky number: {$num}
-			</span>
-			<span>
-				Horoscope:<br/>
-				{$horoscope}
-			</span>
-		</p>
-		<p class="command">Ctrl+Enter to continue...</p>
+{:else}
+	<div class="prediction-results">
+		<h1>Prediction Returned!</h1>
+		<ul>
+			<li>{$phrase}</li>
+			<li>Number: {$num}</li>
+			<li>Horoscope: {$horoscope}</li>
+		</ul>
 	</div>
-	{/if}
-</div>
+{/if}
 
 <style lang="scss">
 	.window {
