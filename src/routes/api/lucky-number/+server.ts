@@ -1,4 +1,4 @@
-import { error, json } from '@sveltejs/kit';
+import { json } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
 
 export function GET({ url }: RequestEvent) {
