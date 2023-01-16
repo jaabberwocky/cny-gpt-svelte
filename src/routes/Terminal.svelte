@@ -19,7 +19,7 @@
 					console.log("Meooowwwww!");
 				</span>
 			</p>
-			<p class="command">manekiNeko: tell me your name...</p>
+			<p class="command">manekiNeko: Tell me your name...</p>
 			{#if name !== ''}
 				<p in:fade={{ duration: 500 }} out:fade={{ duration: 100 }}>
 					manekiNeko: Hello {name}! Hit CTRL+Enter to continue...
@@ -86,19 +86,19 @@
 		.log {
 			white-space: nowrap;
 			overflow: hidden;
-			animation: write-log 2s both;
+			animation: write-log 1s both;
 		}
 
 		p:nth-child(2) {
-			animation-delay: 2s;
+			animation-delay: 1s;
 		}
 
 		p:nth-child(3) {
-			animation-delay: 4s;
+			animation-delay: 2s;
 		}
 
 		p:nth-child(4) {
-			animation-delay: 6s;
+			animation-delay: 3s;
 		}
 	}
 
