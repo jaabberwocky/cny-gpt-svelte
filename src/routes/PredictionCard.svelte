@@ -6,21 +6,23 @@
 <div class="terminal-card">
 	<header>manekiNeko:>></header>
 	<div>
-		{#if isLuckyNumber}
-			Your lucky number this year is: <br /> <br />
-			<section class="prize-number">🍊<slot />🍊</section>
-			<br /> <br />
-			This has opened <emphasis><b>{$numAppearances} times</b></emphasis> since May 1986 - the next
-			time is 🧧yours🧧!
-			<br />
-			<ul>
-				{#each $previousResults as prize}
-					<li><b>{prize.PrizeCode}</b> - {prize.Date}</li>
-				{/each}
-			</ul>
-		{:else}
-			<slot />
-		{/if}
+		<blockquote>
+			{#if isLuckyNumber}
+				Your lucky number this year is: <br /> <br />
+				<section class="prize-number">🍊<slot />🍊</section>
+				<br /> <br />
+				This has opened <emphasis><b>{$numAppearances} times</b></emphasis> since May 1986 - the
+				next time is 🧧yours🧧!
+				<br />
+				<ul>
+					{#each $previousResults as prize}
+						<li><b>{prize.PrizeCode}</b> - {prize.Date}</li>
+					{/each}
+				</ul>
+			{:else}
+				<slot />
+			{/if}
+		</blockquote>
 	</div>
 </div>
 
