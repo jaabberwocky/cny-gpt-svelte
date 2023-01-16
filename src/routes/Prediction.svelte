@@ -9,6 +9,7 @@
 	} from '../lib/stores';
 	import { fade } from 'svelte/transition';
 	import Name from './Name.svelte';
+	import { BarLoader } from 'svelte-loading-spinners';
 
 	let ctrlDown: boolean,
 		enterDown: boolean = false;
@@ -133,6 +134,11 @@
 <svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} />
 <div class="lucky-predictions" in:fade={{ duration: 100 }}>
 	<br />
+	{#if buttonPressed}
+		<div class="loader">
+			<BarLoader size="60" color="#d61c4e" unit="px" />
+		</div>
+	{/if}
 	<Name bind:name />
 	{#if name.length > 0}
 		<button class="btn btn-default" on:click={handleClick} in:fade={{ duration: 100 }}>
@@ -153,5 +159,9 @@
 	button {
 		text-align: center;
 		max-width: 200px;
+	}
+
+	.loader {
+		margin-top: 1.2rem;
 	}
 </style>
