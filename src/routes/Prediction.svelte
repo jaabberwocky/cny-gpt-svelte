@@ -9,7 +9,7 @@
 	} from '../lib/stores';
 	import { fade } from 'svelte/transition';
 	import Name from './Name.svelte';
-	import { BarLoader } from 'svelte-loading-spinners';
+	import { Firework } from 'svelte-loading-spinners';
 
 	let ctrlDown: boolean,
 		enterDown: boolean = false;
@@ -133,7 +133,7 @@
 	<br />
 	{#if buttonPressed}
 		<div class="loader">
-			<BarLoader size="60" color="#d61c4e" unit="px" />
+			<Firework size="80" color="#d61c4e" unit="px" duration="2s" />
 		</div>
 	{:else}
 		<Name bind:name />
@@ -160,6 +160,6 @@
 	}
 
 	.loader {
-		margin-top: 1.2rem;
+		margin-top: 0;
 	}
 </style>
