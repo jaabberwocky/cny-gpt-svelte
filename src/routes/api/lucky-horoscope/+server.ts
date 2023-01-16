@@ -11,7 +11,7 @@ export async function GET({ url }: RequestEvent) {
 	}
 	const completion = await openai.createCompletion({
 		model: 'text-davinci-003',
-		prompt: `Write me an auspicious horoscope for Chinese New Year for ${name}`,
+		prompt: `Write me a 75-word auspicious horoscope for Chinese New Year for ${name} in the Year of the Rabbit`,
 		temperature: +OPENAI_MODEL_TEMPERATURE,
 		max_tokens: 200
 	});
