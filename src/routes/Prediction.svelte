@@ -138,9 +138,10 @@
 		<div class="loader">
 			<BarLoader size="60" color="#d61c4e" unit="px" />
 		</div>
+	{:else}
+		<Name bind:name />
 	{/if}
-	<Name bind:name />
-	{#if name.length > 0}
+	{#if name.length > 0 && !buttonPressed}
 		<button class="btn btn-default" on:click={handleClick} in:fade={{ duration: 100 }}>
 			CTRL+ENTER
 		</button>
