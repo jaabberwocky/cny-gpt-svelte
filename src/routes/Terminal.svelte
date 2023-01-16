@@ -16,8 +16,7 @@
 					Initialising...<br />
 					const manekiNeko = new luckyCatGPT();<br />
 					manekiNeko.init(); <br />
-					... <br />
-					echo "Meoooowww"
+					console.log("Meooowwwww!");
 				</span>
 			</p>
 			<p class="command">manekiNeko: tell me your name...</p>
