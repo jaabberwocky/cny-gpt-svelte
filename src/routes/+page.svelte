@@ -8,13 +8,7 @@
 
 	let buttonPressed: boolean = false;
 	let name: string = '';
-	let visible: boolean = false;
-
-	function handleMessage(event: any) {
-		console.log(event.detail.text);
-	}
-
-	setTimeout(() => (visible = true), 5000);
+	let animationEnd: boolean = false;
 </script>
 
 <svelte:head>
@@ -31,8 +25,8 @@
 	<br />
 	<br />
 	<br />
-	<Terminal bind:name bind:buttonPressed on:message={handleMessage} />
-	{#if visible}
+	<Terminal bind:name bind:buttonPressed bind:animationEnd />
+	{#if animationEnd}
 		{#if !($dataLoaded && buttonPressed)}
 			<Prediction bind:buttonPressed bind:name />
 		{:else}

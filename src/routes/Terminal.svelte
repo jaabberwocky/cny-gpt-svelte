@@ -4,6 +4,11 @@
 	import PredictionResults from './PredictionResults.svelte';
 	export let buttonPressed: boolean;
 	export let name: string;
+	export let animationEnd: boolean;
+
+	function handleAnimationEnd() {
+		animationEnd = true;
+	}
 </script>
 
 <br />
@@ -19,7 +24,7 @@
 					console.log("Meooowwwww!");
 				</span>
 			</p>
-			<p class="command">manekiNeko: Tell me your name...</p>
+			<p class="command" on:animationend={handleAnimationEnd}>manekiNeko: Tell me your name...</p>
 			{#if name !== ''}
 				<p in:fade={{ duration: 500 }} out:fade={{ duration: 100 }}>
 					manekiNeko: Hello {name}! Hit CTRL+Enter to continue...
