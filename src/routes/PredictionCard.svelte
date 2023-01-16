@@ -4,7 +4,7 @@
 </script>
 
 <div class="terminal-card">
-	<header>lucky-cat says:</header>
+	<header>manekiNeko:>></header>
 	<div>
 		{#if isLuckyNumber}
 			Your lucky number this year is: <br /> <br />
