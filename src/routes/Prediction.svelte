@@ -45,12 +45,9 @@
 		const resp = await fetch('/api/previous-result?number=' + numToCheck);
 		const data = await resp.json();
 		const results = JSON.parse(data['d']);
-		console.log(results);
 
 		$numAppearances = results[0]['NumberOfAppearances'];
 		$previousResults = getPreviousWinningDates(results[0]['Prizes']);
-
-		console.log($previousResults);
 	}
 
 	function getPreviousWinningDates(
