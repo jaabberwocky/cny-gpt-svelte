@@ -24,4 +24,7 @@ OPENAI_MODEL_TEMPERATURE=<Float value from 0.0 to 1.0>
 
 These two values are loaded into the SvelteKit app through `$env/static/private` for secure utilisation of the secrets on the server without sharing it to the client.
 
+4. Run dev server with `npm run dev`
+5. Navigate to `localhost:5173` to view
+
 Fork or contribute if you will, I welcome it all 😊
