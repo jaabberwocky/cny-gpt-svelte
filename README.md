@@ -1,38 +1,20 @@
-# create-svelte
+# Lucky Cat GPT
+<img src='src/lib/images/lucky-cat.jpg' width='150px'>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/72929a43-af94-49b0-8a50-597dec2e6037/deploy-status)](https://app.netlify.com/sites/lucky-cat-gpt/deploys)
 
-## Creating a project
+SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` model to power prompts specific for a fun use-case, Chinese New Year! Fork or contribute if you will, I welcome it all 😊
 
-If you're seeing this, you've probably already done this step. Congrats!
+Deployed [here](https://lucky-cat-gpt.netlify.app/) at Netlify. 
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Setting up for development
+1. Clone this repository
+2. `npm install` to get all dependencies
+3. Create a `.env` file at the root of the repository containing these two values:
 
-# create a new project in my-app
-npm create svelte@latest my-app
+```
+OPENAI_KEY=<OpenAI API key>
+OPENAI_MODEL_TEMPERATURE=<Float value from 0.0 to 1.0>
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+These two values are loaded into the SvelteKit app through `$env/static/private` for secure utilisation of the secrets on the server without sharing it to the client.
