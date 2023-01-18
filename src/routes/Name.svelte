@@ -4,6 +4,9 @@
 	function init(el: any) {
 		el.focus();
 	}
+	$: if (name.length > 20) {
+		name = name.slice(1, 20);
+	}
 </script>
 
 <div class="form-group">
