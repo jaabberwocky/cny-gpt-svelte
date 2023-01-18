@@ -13,7 +13,7 @@
 
 <svelte:head>
 	<title>&lt;lucky-cat gpt/&gt;</title>
-	<meta name="description" content="Chinese New Year GPT" />
+	<meta name="description" content="<lucky-cat gpt/>" />
 </svelte:head>
 
 <section class="title">
