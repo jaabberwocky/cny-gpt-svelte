@@ -1,16 +1,18 @@
 # Lucky Cat GPT
+
 <div align='center'>
 <img src='src/lib/images/lucky-cat.jpg' width='250px'>
 
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/72929a43-af94-49b0-8a50-597dec2e6037/deploy-status)](https://app.netlify.com/sites/lucky-cat-gpt/deploys)
+
 </div>
 
-SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` model to power prompts specific for a fun use-case, Chinese New Year! 
+SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` model to power prompts specific for a fun use-case, Chinese New Year!
 
-Deployed [here](https://lucky-cat-gpt.netlify.app/) at Netlify. 
+Deployed [here](https://lucky-cat-gpt.netlify.app/) at Netlify.
 
 ## Setting up for development
+
 1. Clone this repository
 2. `npm install` to get all dependencies
 3. Create a `.env` file at the root of the repository containing these two values:
