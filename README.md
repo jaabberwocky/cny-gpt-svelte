@@ -1,7 +1,10 @@
 # Lucky Cat GPT
-<img src='src/lib/images/lucky-cat.jpg' width='150px'>
+<div align='center'>
+<img src='src/lib/images/lucky-cat.jpg' width='250px'>
+
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/72929a43-af94-49b0-8a50-597dec2e6037/deploy-status)](https://app.netlify.com/sites/lucky-cat-gpt/deploys)
+</div>
 
 SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` model to power prompts specific for a fun use-case, Chinese New Year! Fork or contribute if you will, I welcome it all 😊
 
