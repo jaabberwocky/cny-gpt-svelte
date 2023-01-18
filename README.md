@@ -6,7 +6,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/72929a43-af94-49b0-8a50-597dec2e6037/deploy-status)](https://app.netlify.com/sites/lucky-cat-gpt/deploys)
 </div>
 
-SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` model to power prompts specific for a fun use-case, Chinese New Year! Fork or contribute if you will, I welcome it all 😊
+SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` model to power prompts specific for a fun use-case, Chinese New Year! 
 
 Deployed [here](https://lucky-cat-gpt.netlify.app/) at Netlify. 
 
@@ -21,3 +21,5 @@ OPENAI_MODEL_TEMPERATURE=<Float value from 0.0 to 1.0>
 ```
 
 These two values are loaded into the SvelteKit app through `$env/static/private` for secure utilisation of the secrets on the server without sharing it to the client.
+
+Fork or contribute if you will, I welcome it all 😊
