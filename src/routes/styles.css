@@ -28,6 +28,7 @@ h1,
 h2,
 p {
 	font-weight: 400;
+	font-size: 11px;
 }
 
 p {
@@ -44,12 +45,20 @@ a:hover {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 1.7rem;
 	text-align: center;
 }
 
 h2 {
 	font-size: 1rem;
+}
+
+blockquote {
+	font-size: 12px;
+}
+
+header {
+	font-size: 12px;
 }
 
 pre {
@@ -82,11 +91,24 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 500px) {
 	h1 {
 		font-size: 2.4rem;
 	}
+
+	p {
+		font-size: 18px;
+	}
+
+	blockquote {
+		font-size: 18px;
+	}
+
+	header {
+		font-size: 15px;
+	}
 }
+
 
 .visually-hidden {
 	border: 0;
