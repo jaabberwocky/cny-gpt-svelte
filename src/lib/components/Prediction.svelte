@@ -1,14 +1,7 @@
 <script lang="ts">
-	import {
-		num,
-		phrase,
-		dataLoaded,
-		horoscope,
-		previousResults,
-		numAppearances
-	} from '../lib/stores';
+	import { num, phrase, dataLoaded, horoscope, previousResults, numAppearances } from '$lib/stores';
 	import { fade } from 'svelte/transition';
-	import Name from './Name.svelte';
+	import Name from '$lib/components/Name.svelte';
 	import { Firework } from 'svelte-loading-spinners';
 
 	let ctrlDown: boolean,

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { num, phrase, horoscope } from '../lib/stores';
-	import PredictionCard from './PredictionCard.svelte';
+	import { num, phrase, horoscope } from '$lib/stores';
+	import PredictionCard from '$lib/components/PredictionCard.svelte';
 </script>
 
 <div id="prediction-results" in:fade out:fade={{ duration: 100 }}>

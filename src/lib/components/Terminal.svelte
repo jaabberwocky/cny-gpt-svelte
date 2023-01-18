@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { dataLoaded } from '../stores';
-	import PredictionResults from '../../routes/PredictionResults.svelte';
+	import { dataLoaded } from '$lib/stores';
+	import PredictionResults from '$lib/components/PredictionResults.svelte';
 	export let buttonPressed: boolean;
 	export let name: string;
 	export let animationEnd: boolean;

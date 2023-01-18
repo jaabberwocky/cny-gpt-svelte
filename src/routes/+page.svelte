@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Prediction from './Prediction.svelte';
-	import Terminal from '../lib/components/Terminal.svelte';
+	import Prediction from '$lib/components/Prediction.svelte';
+	import Terminal from '$lib/components/Terminal.svelte';
 	import luckyCat from '$lib/images/lucky-cat.jpg';
 
 	import { dataLoaded } from '$lib/stores';
-	import Restart from './Restart.svelte';
+	import Restart from '$lib/components/Restart.svelte';
 
 	let buttonPressed: boolean = false;
 	let name: string = '';
