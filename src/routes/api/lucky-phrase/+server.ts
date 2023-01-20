@@ -12,7 +12,7 @@ export async function GET({ url }: RequestEvent) {
 
 	const completion = await openai.createCompletion({
 		model: 'text-davinci-003',
-		prompt: `Write me an auspicious phrase in Mandarin to welcome Chinese New Year for ${name}`,
+		prompt: `Write me an auspicious phrase in Mandarin to welcome Chinese New Year for ${name} and also provide the translation in English in brackets`,
 		temperature: +OPENAI_MODEL_TEMPERATURE,
 		max_tokens: 200
 	});
