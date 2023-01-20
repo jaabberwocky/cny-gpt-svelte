@@ -30,8 +30,16 @@
 
 	async function getLuckyNumber() {
 		const resp = await fetch('/api/lucky-number');
+		if (!resp.ok) {
+			if (resp.status === 429) {
+				alert('OpenAI servers are overloaded, try again later.');
+			} else {
+				console.log(resp);
+			}
+			throw new Error('error');
+		}
 		const data = await resp.json();
-		$num = data['number'].replace(/\D/g, '');
+		$num = extractOnlyNumbersFromString(data['number']);
 	}
 
 	async function getPreviousResults(numToCheck: string) {
@@ -84,12 +92,28 @@
 
 	async function getPhrase() {
 		const resp = await fetch(`/api/lucky-phrase?name=${name}`);
+		if (!resp.ok) {
+			if (resp.status === 429) {
+				alert('OpenAI servers are overloaded, try again later.');
+			} else {
+				console.log(resp);
+			}
+			throw new Error('error');
+		}
 		const data = await resp.json();
 		$phrase = data['phrase'];
 	}
 
 	async function getHoroscope() {
 		const resp = await fetch(`/api/lucky-horoscope?name=${name}`);
+		if (!resp.ok) {
+			if (resp.status === 429) {
+				alert('OpenAI servers are overloaded, try again later.');
+			} else {
+				console.log(resp);
+			}
+			throw new Error('error');
+		}
 		const data = await resp.json();
 		$horoscope = data['horoscope'];
 	}
