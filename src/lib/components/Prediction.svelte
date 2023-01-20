@@ -31,7 +31,7 @@
 	async function getLuckyNumber() {
 		const resp = await fetch('/api/lucky-number');
 		const data = await resp.json();
-		$num = data['number'];
+		$num = data['number'].replace(/\D/g, '');
 	}
 
 	async function getPreviousResults(numToCheck: string) {
