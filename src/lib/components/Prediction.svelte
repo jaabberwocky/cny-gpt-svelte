@@ -16,6 +16,10 @@
 		handleClick();
 	}
 
+	$: if ($numAppearances.length === 0) {
+		$numAppearances = '0';
+	}
+
 	async function handleClick() {
 		buttonPressed = true;
 		getLuckyNumber().then(() => {

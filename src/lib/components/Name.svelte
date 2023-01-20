@@ -19,5 +19,6 @@
 	label,
 	input {
 		font-family: 'Courier';
+		color: var(--color-text);
 	}
 </style>
