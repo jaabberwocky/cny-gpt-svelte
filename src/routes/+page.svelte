@@ -38,7 +38,7 @@
 <style>
 	section.title h1 {
 		font-family: 'Courier New', Courier, monospace;
-		color: #d61c4e;
+		color: #f7725f;
 	}
 	section {
 		display: flex;
