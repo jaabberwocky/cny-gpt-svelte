@@ -109,7 +109,6 @@ button:focus:not(:focus-visible) {
 	}
 }
 
-
 .visually-hidden {
 	border: 0;
 	clip: rect(0 0 0 0);
