@@ -38,7 +38,7 @@
 <style>
 	section.title h1 {
 		font-family: 'Courier New', Courier, monospace;
-		color: #f7725f;
+		color: var(--color-title);
 	}
 	section {
 		display: flex;
@@ -50,7 +50,7 @@
 
 	section.main img {
 		width: 100%;
-		max-width: 400px;
+		max-width: 600px;
 		margin-bottom: 10px;
 	}
 </style>

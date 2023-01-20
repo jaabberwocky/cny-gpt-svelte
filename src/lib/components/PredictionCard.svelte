@@ -16,7 +16,7 @@
 				<br />
 				<ul>
 					{#each $previousResults as prize}
-						<li><b>{prize.PrizeCode}</b> - {prize.Date}</li>
+						<li><emphasis><b>{prize.PrizeCode}</b></emphasis> - {prize.Date}</li>
 					{/each}
 				</ul>
 			{:else}
@@ -40,5 +40,9 @@
 	div.terminal-card {
 		display: flex;
 		flex-flow: column wrap;
+	}
+
+	emphasis {
+		color: #e900ff;
 	}
 </style>
