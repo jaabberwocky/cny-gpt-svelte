@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Prediction from '$lib/components/Prediction.svelte';
 	import Terminal from '$lib/components/Terminal.svelte';
-	import luckyCat from '$lib/images/lucky-cat.jpg';
+	import luckyCat from '$lib/images/lucky-cat.png';
 
 	import { dataLoaded } from '$lib/stores';
 	import Restart from '$lib/components/Restart.svelte';
@@ -50,6 +50,7 @@
 
 	section.main img {
 		width: 100%;
-		max-width: 225px;
+		max-width: 400px;
+		margin-bottom: 10px;
 	}
 </style>
