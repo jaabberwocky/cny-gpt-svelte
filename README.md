@@ -1,7 +1,7 @@
 # Lucky Cat GPT
 
 <div align='center'>
-<img src='src/lib/images/lucky-cat.jpg' width='250px'>
+<img src='src/lib/images/lucky-cat.png' width='350px'>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/72929a43-af94-49b0-8a50-597dec2e6037/deploy-status)](https://app.netlify.com/sites/lucky-cat-gpt/deploys)
 
