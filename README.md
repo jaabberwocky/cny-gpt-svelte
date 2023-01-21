@@ -7,7 +7,7 @@
 
 </div>
 
-SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` model to power prompts specific for a fun use-case, Chinese New Year!
+SvelteKit 1.0 app built on top of the OpenAI API! This project is using the latest `davinci-003` [OpenAI model](https://beta.openai.com/docs/models/gpt-3) to power prompts specific for a fun use-case, Chinese New Year!
 
 Deployed [here](https://lucky-cat-gpt.netlify.app/) at Netlify.
 
